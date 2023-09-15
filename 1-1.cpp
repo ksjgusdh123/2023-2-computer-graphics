@@ -78,7 +78,7 @@ GLvoid Keyboard(unsigned char key, int x, int y)
 		break;
 	case 'w':
 		r = 1; g = 1; b = 1;
-		break;
+		break; 
 	case 'k':
 		r = 0; g = 0; b = 0;
 		break;
