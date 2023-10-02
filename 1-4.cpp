@@ -124,7 +124,7 @@ GLvoid Mouse_Move(int x, int y)
 
 int size_count = -1;
 float size[5] = { 0.1, 0.2, 0, -0.1, -0.2 };
-bool a_check[5] = { 0 };
+bool p_check[5] = { 0 };
 bool i_check[5] = { 0 };
 
 GLvoid Timer_event(int value)
@@ -146,16 +146,16 @@ GLvoid Timer_event(int value)
 	case 0:
 		for (int i = 0; i < point_x.size(); ++i) {
 			if (point_x.at(i) <= -1 || point_y.at(i) >= 1 || endpoint_x.at(i) >= 1 || endpoint_y.at(i) <= -1) {
-				if (a_check[i]) {
-					a_check[i] = false;
+				if (p_check[i]) {
+					p_check[i] = false;
 				}
 				else {
-					a_check[i] = true;
+					p_check[i] = true;
 				}
 			}
 		}
 		for (int i = 0; i < point_x.size(); ++i) {
-			if (a_check[i]) {
+			if (p_check[i]) {
 				point_x.at(i) += 0.1;
 				endpoint_x.at(i) += 0.1;
 				point_y.at(i) -= 0.1;
